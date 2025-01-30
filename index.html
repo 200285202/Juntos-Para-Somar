@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juntos Para Somar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+
+        }
+
+        header {
+    background-color: #4B0082; /* Cor para combinar com o rodapé */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+        .hero {
+            background-color: #CCBBF2;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carousel {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 40px 20px;
+        }
+
+        .card {
+            background: #F8F8F8;
+            border: 1px solid #DDD;
+            border-radius: 8px;
+            width: 300px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+            color: #CCBBF2;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 20px;
+        }
+
+        .team-member {
+            background: #F8F8F8;
+            border: 1px solid #DDD;
+            border-radius: 8px;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .team-member h3 {
+            margin: 10px 0;
+            color: #4B0082;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #CCBBF2;
+            color: white;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-section {
+            margin: 10px;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo para o botão de WhatsApp */
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            font-size: 1.2rem;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            margin: 20px auto;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #CCBBF2;
+        }
+        .box{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+
+
+        body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .carrossel-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .carrossel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+        
+
+
+
+
+
+         
+
+    </style>
+</head>
+<body>
+  <header style="background-color: transparent; color: white; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); border-radius: 10px;">
+    <div class="logo-container" style="display: flex; align-items: center;">
+        <img src="imagem/logo.png" alt="Logo" style="height: 60px; border-radius: 10px; margin-right: 10px;">
+        <span style="font-size: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <div class="title" style="font-size: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: black;">
+        Juntos Para Somar
+    </div>
+        </span>
+    </div>
+    
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 20px;">
+        <a href="https://www.facebook.com/juntos.para.somar.2023?mibextid=ZbWKwL" target="_blank" title="Facebook" style="text-decoration: none;">
+            <img src="imagem/face.png" alt="Facebook" width="45px" style="border-radius: 50%; transition: transform 0.3s;">
+        </a>
+        <a href="https://www.instagram.com/juntos.pra.somar?igsh=N2Q2ajVhZmpsaDdz" target="_blank" title="Instagram" style="text-decoration: none;">
+            <img src="imagem/insta.png" alt="Instagram" width="45px" style="border-radius: 50%; transition: transform 0.3s;">
+        </a>
+        <a href="https://www.tiktok.com/@juntosparasomar?_t=8rTXAFYZpcG&_r=1" target="_blank" title="Instagram" style="text-decoration: none;">
+            <img src="imagem/tik.png" alt="Instagram" width="45px" style="border-radius: 50%; transition: transform 0.3s;">
+        </a>
+    </div>
+
+
+
+
+
+
+</header>
+
+
+
+
+    <div class="carousel">
+        <img src="imagem/paisagem.jpg" alt="Slide 1" class="active">
+        <img src="imagem/paisagem2.jpg" alt="Slide 1">
+        <img src="imagem/paisagem3.jpg" alt="Slide 2">
+        <img src="imagem/paisagem4.jpg" alt="Slide 3">
+        <img src="imagem/paisagem5.jpg" alt="Slide 4">
+        <img src="imagem/paisagem6.jpg" alt="Slide 5">
+    </div>
+
+    <header>
+        <div class="box"> <h2>Quem somos </h2> </div>
+    </header> 
+
+    
+
+    <section class="cards">
+        <div class="card">
+            <img src="imagem/missao.png">
+            <h3>Missão</h3>
+            <p>Promover igualdade, o bem estar , qualidade de vida e fomentar a inclusão social, de famílias e crianças em vulnerabilidade.E juntos e unidos multiplicaremos sonhos e transformaremos vidas!</p>
+        </div>
+        <div class="card">
+            <img src="imagem/visao.png">
+            <h3>Visão</h3>
+            <p>Ser um farol de esperança , liderando esforços que e impactam positivamente vidas e comunidades. Buscando construir um mundo onde todas as pessoas possam encontrar apoio e prosperidade, transformando a sociedade mais justa e igualitária.</p>
+        </div>
+        <div class="card">
+            <img src="imagem/valores.png">
+            <h3>Valores</h3>
+            <p>1 Solidariedade 
+                2 - Empatia
+                3 - Perseverança 
+                4 - Generosidade
+                5 - Transformação 
+                6 - Transparência na Gestão</p>
+        </div>
+    </section>
+
+
+<header>
+        <div class="box"> <h2>Equipe </h2> </div>
+    </header> 
+
+
+    <section class="team">
+        <div class="team-member">
+            <img src="imagem/equipe.jpg" alt="Membro 1">
+            <h3>Joana</h3>
+            <p>Fundadora</p>
+        </div>
+        <div class="team-member">
+            <img src="imagem/equipe2.jpg" alt="Membro 2">
+            <h3>Kleber</h3>
+            <p>Diretor</p>
+        </div>
+        <div class="team-member">
+            <img src="imagem/equipe3.jpg" alt="Membro 3">
+            <h3>Stefani</h3>
+            <p>Diretora</p>
+        </div>
+        <div class="team-member">
+            <img src="imagem/equipe4.jpg" alt="Membro 4">
+            <h3>Regiane</h3>
+            <p>Gerente</p>
+        </div>
+        <div class="team-member">
+            <img src="imagem/equipe5.jpg" alt="Membro 5">
+            <h3>Pedo</h3>
+            <p>Voluntario</p>
+        </div>
+        <div class="team-member">
+            <img src="imagem/equipe6.jpg" alt="Membro 6">
+            <h3>Sofia</h3>
+            <p>Voluntaria</p>
+        </div>
+    </section>
+
+
+
+
+    <h2>Seis Carrosséis de Imagens</h2>
+
+  <!-- Criando seis carrosséis -->
+  <div class="container">
+    <h3>Carrossel 1</h3>
+    <div class="carrossel-container">
+      <div class="carrossel" id="carrossel1">
+        <div class="slide"><img src="imagem/zap.jpeg" alt="Slide 1"></div>
+        <div class="slide"><img src="imagem/zap2.jpeg" alt="Slide 2"></div>
+        <div class="slide"><img src="imagem/zap3.jpeg" alt="Slide 3"></div>
+      </div>
+      <button class="nav-btn prev" onclick="mudarSlide(-1, 'carrossel1')">❮</button>
+      <button class="nav-btn next" onclick="mudarSlide(1, 'carrossel1')">❯</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Carrossel 2</h3>
+    <div class="carrossel-container">
+      <div class="carrossel" id="carrossel2">
+        <div class="slide"><img src="imagem/zap4.jpeg" alt="Slide 1"></div>
+        <div class="slide"><img src="imagem/zap5.jpeg" alt="Slide 2"></div>
+        <div class="slide"><img src="imagem/zap6.jpeg" alt="Slide 3"></div>
+      </div>
+      <button class="nav-btn prev" onclick="mudarSlide(-1, 'carrossel2')">❮</button>
+      <button class="nav-btn next" onclick="mudarSlide(1, 'carrossel2')">❯</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Carrossel 3</h3>
+    <div class="carrossel-container">
+      <div class="carrossel" id="carrossel3">
+        <div class="slide"><img src="imagem/zap7.jpeg" alt="Slide 1"></div>
+        <div class="slide"><img src="imagem/zap8.jpeg" alt="Slide 2"></div>
+        <div class="slide"><img src="imagem/zap9.jpeg" alt="Slide 3"></div>
+      </div>
+      <button class="nav-btn prev" onclick="mudarSlide(-1, 'carrossel3')">❮</button>
+      <button class="nav-btn next" onclick="mudarSlide(1, 'carrossel3')">❯</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Carrossel 4</h3>
+    <div class="carrossel-container">
+      <div class="carrossel" id="carrossel4">
+        <div class="slide"><img src="imagem/zap15.jpeg" alt="Slide 1"></div>
+        <div class="slide"><img src="imagem/zap11.jpeg" alt="Slide 2"></div>
+        <div class="slide"><img src="imagem/zap19.jpeg" alt="Slide 3"></div>
+      </div>
+      <button class="nav-btn prev" onclick="mudarSlide(-1, 'carrossel4')">❮</button>
+      <button class="nav-btn next" onclick="mudarSlide(1, 'carrossel4')">❯</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Carrossel 5</h3>
+    <div class="carrossel-container">
+      <div class="carrossel" id="carrossel5">
+        <div class="slide"><img src="imagem/zap13.jpeg" alt="Slide 1"></div>
+        <div class="slide"><img src="imagem/zap14.jpeg" alt="Slide 2"></div>
+        <div class="slide"><img src="imagem/zap15.jpeg" alt="Slide 3"></div>
+      </div>
+      <button class="nav-btn prev" onclick="mudarSlide(-1, 'carrossel5')">❮</button>
+      <button class="nav-btn next" onclick="mudarSlide(1, 'carrossel5')">❯</button>
+    </div>
+  </div>
+
+  <script>
+    function mudarSlide(direcao, id) {
+      const carrossel = document.getElementById(id);
+      let index = parseInt(carrossel.dataset.index) || 0;
+      const totalSlides = carrossel.children.length;
+
+      index = (index + direcao + totalSlides) % totalSlides;
+      carrossel.dataset.index = index;
+      carrossel.style.transform = `translateX(-${index * 100}%)`;
+    }
+  </script>
+
+
+
+
+
+
+
+
+    <script>
+    function createCarrossel(id, images) {
+      document.write(`
+        <div class="container">
+          <div class="carrossel" id="carrossel${id}">
+            <div class="slide"><img src="${images[0]}" alt="Imagem 1"></div>
+            <div class="slide"><img src="${images[1]}" alt="Imagem 2"></div>
+            <div class="slide"><img src="${images[2]}" alt="Imagem 3"></div>
+          </div>
+          <div class="carrossel-btns">
+            <button class="prev" onclick="moveSlide(${id}, -1)">❮</button>
+            <button class="next" onclick="moveSlide(${id}, 1)">❯</button>
+          </div>
+        </div>
+      `);
+    }
+
+    function moveSlide(carrosselId, direction) {
+      const carrossel = document.getElementById(`carrossel${carrosselId}`);
+      let index = parseInt(carrossel.getAttribute("data-index") || "0");
+      index = (index + direction + 3) % 3;
+      carrossel.setAttribute("data-index", index);
+      carrossel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+
+
+
+
+
+
+
+
+
+    <!-- Botão de WhatsApp para doações -->
+    <a href="https://wa.me/5511983360341" class="whatsapp-btn" target="_blank">Faça sua doação</a>
+
+    <footer style="background-color: #4B0082; color: white; padding: 30px 20px; text-align: center; border-top: 3px solid #ffffff33;">
+    <div class="footer-section" style="max-width: 600px; margin: 0 auto;">
+        <h4 style="font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase;">Fale Conosco</h4>
+        <p style="font-size: 1.1rem; margin: 5px 0;">📧 <strong>Email:</strong> juntosparasomar@gmail.com</p>
+        <p style="font-size: 1.1rem; margin: 5px 0;">📞 <strong>Telefone:</strong> (11) 98336-0341</p>
+        <p style="font-size: 1.1rem; margin: 5px 0;">📍 <strong>Endereço:</strong> Rua Bucuituba - 785</p>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 20px;">
+        <a href="https://www.facebook.com/juntos.para.somar.2023?mibextid=ZbWKwL" target="_blank" title="Facebook" style="text-decoration: none;">
+            <img src="imagem/face.png" alt="Facebook" width="45px" style="border-radius: 50%; transition: transform 0.3s;">
+        </a>
+        <a href="https://www.instagram.com/juntos.pra.somar?igsh=N2Q2ajVhZmpsaDdz" target="_blank" title="Instagram" style="text-decoration: none;">
+            <img src="imagem/insta.png" alt="Instagram" width="45px" style="border-radius: 50%; transition: transform 0.3s;">
+        </a>
+    </div>
+</footer>
+
+
+
+
+
+   
+  <script>
+    const carrossel = document.querySelector('.carrossel');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let index = 0;
+
+    function updateCarrossel() {
+      const totalSlides = document.querySelectorAll('.slide').length;
+      carrossel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : 5; // Volta para o último slide
+      updateCarrossel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index < 5) ? index + 1 : 0; // Volta para o primeiro slide
+      updateCarrossel();
+    });
+  </script>
+
+
+
+
+
+
+
+
+<footer style="background-color: #4B0082; color: white; padding: 30px 20px; text-align: center;">
+    <div class="footer-section" style="max-width: 600px; margin: 0 auto;">
+        <h4 style="font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase;">Fale Conosco</h4>
+        <p style="font-size: 1.1rem; margin: 5px 0;">📧 <strong>Email:</strong> juntosparasomar@gmail.com</p>
+        <p style="font-size: 1.1rem; margin: 5px 0;">📞 <strong>Telefone:</strong> (11) 98336-0341</p>
+        <p style="font-size: 1.1rem; margin: 5px 0;">📍 <strong>Endereço:</strong> Rua Bucuituba - 785</p>
+    </div>
+    
+</footer>
+
+
+
+
+
+
+
+
+    <script>
+        // Código JavaScript para o carrossel
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        
+        function changeImage() {
+            // Remove a classe 'active' da imagem atual
+            images[currentIndex].classList.remove('active');
+        
+            // Atualiza o índice para a próxima imagem
+            currentIndex = (currentIndex + 1) % images.length;
+        
+            // Adiciona a classe 'active' à próxima imagem
+            images[currentIndex].classList.add('active');
+        }
+        
+        // Chama a função a cada 3 segundos
+        setInterval(changeImage, 3000);
+        
+        // Chama a função inicial para mostrar a primeira imagem
+        changeImage();
+    </script>
+</body>
+</html>
