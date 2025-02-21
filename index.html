@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Lilás</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100vh;
+            background-color: #A48ABF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .nav-items {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            padding: 0;
+        }
+        .nav-item {
+            cursor: pointer;
+        }
+        .logo-item img {
+            width: 60px;
+        }
+        .nav-item a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .nav-item:hover a {
+            color: #e60023;
+        }
+        .logo-item { order: 0; }
+        .item1 { order: 1; }
+        .item2 { order: 2; }
+        .item3 { order: 3; }
+        .item4 { order: 4; }
+        
+        /* Responsivo: no mobile, vira barra inferior */
+        @media (max-width: 768px) {
+            .sidebar {
+                top: auto;
+                bottom: 0;
+                width: 100%;
+                height: 60px;
+                flex-direction: row;
+                justify-content: space-around;
+                border-top: 1px solid #ccc;
+            }
+            .nav-items {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-around;
+            }
+            .logo-item {
+                display: none;
+            }
+        }
+
+
+
+
+
+
+
+
+
+        .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+            }
+        }
+
+
+
+        /* Seção "Quem Somos" */
+        .section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h1 {
+            font-size: 36px;
+            color: #5E3D92;
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: #7E5AB8;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        /* Missão, Visão, Valores */
+        /* Estilos para a seção "Valores" */
+#valores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Garante que ocupe toda a altura da tela */
+  text-align: center;
+  background-color: #f3e8ff; /* Cor de fundo suave */
+  padding: 40px 20px;
+  color: #5e3b76; /* Cor de texto suave e sofisticada */
+}
+
+#valores h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#valores .value-box {
+  background-color: #fff;
+  padding: 30px;
+  margin: 20px 0;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#valores .value-box h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#valores .value-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #5e3b76; /* Cor de texto para os parágrafos */
+}
+
+/* Estilos para a seção "Equipe" */
+#equipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f3e8ff;
+  padding: 40px 20px;
+}
+
+#equipe h2 {
+  font-size: 2.5rem;
+  width: 100%;
+  text-align: center;
+  color: #5e3b76;
+  margin-bottom: 30px;
+}
+
+.team-photo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+  #valores .value-box {
+    width: 90%;
+  }
+
+  .team-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+
+
+    
+
+       #atividades {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.atividade-container {
+  width: 30%;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.atividade-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.atividade-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.atividade-content {
+  padding: 20px;
+}
+
+.atividade-content h3 {
+  font-size: 1.8rem;
+  color: #5e3b76;
+  margin-bottom: 10px;
+}
+
+.atividade-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .atividade-container {
+    width: 100%;
+  }
+
+  .atividade-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .atividade-content p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+    #carrossel {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 2rem;
+  transform: translateY(-50%);
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 300px;
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul class="nav-items">
+           <li class="nav-item logo-item"><img src="logo.png" alt="Logo"></li>
+<li class="nav-item item1"><a href="https://www.instagram.com/juntos.pra.somar?igsh=N2Q2ajVhZmpsaDdz"><i class="fab fa-instagram"></i></a></li>
+<li class="nav-item item4"><a href="https://wa.me/5511983360341"><i class="fas fa-hand-holding-heart"></i></a></li>
+<li class="nav-item item3"><a href="https://g.co/kgs/vtX6QUQ"><i class="fas fa-map-marker-alt"></i></a></li>
+<li class="nav-item item4"><a href="https://wa.me/5511983360341"><i class="fab fa-whatsapp"></i></a></li>
+<li class="nav-item item5"><a href="https://www.facebook.com/juntos.para.somar.2023?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a></li>
+<li class="nav-item item6"><a href="https://www.tiktok.com/@juntosparasomar?_t=8rTXAFYZpcG&_r=1"><i class="fab fa-tiktok"></i></a></li>
+
+        </ul>
+    </div>
+
+
+     <!-- Container de conteúdo -->
+    <div class="content">
+        <div>
+            <h1>Juntos para Somar</h1>
+            <h2>Ação entre amigos</h2>
+        </div>
+    </div>
+
+
+
+    <section id="carrossel">
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="foto.jpeg" alt="Equipe 1" class="carousel-item">
+      <img src="foto2.jpeg" alt="Equipe 2" class="carousel-item">
+      <img src="foto3.jpeg" alt="Equipe 3" class="carousel-item">
+      <img src="foto4.jpeg" alt="Equipe 4" class="carousel-item">
+      <img src="foto5.jpeg" alt="Equipe 5" class="carousel-item">
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+</section>
+
+ <script>
+        let index = 0;
+
+function moveSlide(step) {
+  const slides = document.querySelector('.carousel-slide');
+  const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+  index += step;
+
+  if (index < 0) {
+    index = totalSlides - 1;
+  } else if (index >= totalSlides) {
+    index = 0;
+  }
+
+  const offset = -index * 100; // Move a distância de 100% da largura do slide
+  slides.style.transform = `translateX(${offset}%)`;
+}
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <section id="valores">
+  <h2>Nossos Valores</h2>
+  <div class="value-box">
+    <h3>Missão</h3>
+    <p>Levar apoio e esperança às famílias carentes, promovendo ações solidárias.</p>
+  </div>
+  <div class="value-box">
+    <h3>Visão</h3>
+    <p>Construir uma sociedade mais justa e solidária, gerando impacto positivo.</p>
+  </div>
+  <div class="value-box">
+    <h3>Valores</h3>
+    <p>Empatia, solidariedade e compromisso com a transformação social.</p>
+  </div>
+</section>
+
+<section id="equipe">
+  <h2>Nossa Equipe</h2>
+  <div class="team-container">
+    <img src="equipe.jpg" alt="Equipe 1" class="team-photo">
+    <img src="equipe2.jpg" alt="Equipe 2" class="team-photo">
+    <img src="equipe3.jpg" alt="Equipe 3" class="team-photo">
+    <img src="equipe5.jpg" alt="Equipe 4" class="team-photo">
+    <img src="equipe6.jpg" alt="Equipe 5" class="team-photo">
+  </div>
+</section>
+
+
+
+   
+
+
+
+
+
+        <!-- Seção "Nossas Atividades" -->
+       <section id="atividades">
+  <div class="atividade-container">
+    <img src="encontro.jpg" alt="Atividade 1">
+    <div class="atividade-content">
+      <h3>Atendimento Mensal a Famílias</h3>
+      <p>Apoiamos mensalmente 10
+famílias na comunidade
+de Heliópolis com doações
+de cestas básicas, roupas
+e produtos para higiene.</p>
+    </div>
+  </div>
+
+  <div class="atividade-container">
+    <img src="cafe.jpg" alt="Atividade 2">
+    <div class="atividade-content">
+      <h3>Cafés Bimestrais</h3>
+      <p>Organizamos encontros
+bimestrais para atender
+até 30 pessoas em
+situação de rua, na região
+Central de SP, oferecendo
+alimentação e suporte
+emocional.</p>
+    </div>
+  </div>
+
+  <div class="atividade-container">
+    <img src="evento.jpg" alt="Atividade 3">
+    <div class="atividade-content">
+      <h3>Eventos Anuais</h3>
+      <p>Realizamos três grandes
+eventos anuais (Páscoa,
+Dia das Crianças e Natal)
+Atendendo
+aproximadamente 300
+crianças com doações
+temáticas e atividades
+recreativas na
+Comunidade de Heliópolis</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+</body>
+</html>
