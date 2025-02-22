@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Lilás</title>
+    <title>Juntos Para Somar</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -94,6 +94,18 @@
                 text-align: center;
             }
         }
+
+        .title-container {
+    display: flex;
+    align-items: center; /* Alinha a logo e o texto no centro */
+    gap: 15px; /* Espaço entre a logo e o título */
+}
+
+.title-logo {
+    width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+}
+
 
 
 
@@ -335,7 +347,12 @@ button:hover {
   }
 }
 
-
+ .container {
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
 
     </style>
 </head>
@@ -349,19 +366,24 @@ button:hover {
 <li class="nav-item item4"><a href="https://wa.me/5511983360341"><i class="fab fa-whatsapp"></i></a></li>
 <li class="nav-item item5"><a href="https://www.facebook.com/juntos.para.somar.2023?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a></li>
 <li class="nav-item item6"><a href="https://www.tiktok.com/@juntosparasomar?_t=8rTXAFYZpcG&_r=1"><i class="fab fa-tiktok"></i></a></li>
-
         </ul>
     </div>
 
 
      <!-- Container de conteúdo -->
     <div class="content">
+    <div class="title-container">
+        <img src="logo.png" alt="Logo Juntos para Somar" class="title-logo">
         <div>
             <h1>Juntos para Somar</h1>
             <h2>Ação entre amigos</h2>
         </div>
     </div>
+</div>
 
+ <div class="container">
+        <p>Este é um contêiner com espaçamento interno e externo.</p>
+    </div>
 
 
     <section id="carrossel">
@@ -377,10 +399,6 @@ button:hover {
     <button class="next" onclick="moveSlide(1)">&#10095;</button>
   </div>
 </section>
-
-    <br>
-    <br>
-    <br>
 
  <script>
         let index = 0;
@@ -407,7 +425,9 @@ function moveSlide(step) {
 
 
 
-
+ <div class="container">
+        <p>Este é um contêiner com espaçamento interno e externo.</p>
+    </div>
 
 
 
@@ -428,9 +448,11 @@ function moveSlide(step) {
   </div>
 </section>
 
-    <br>
-    <br>
-    <br>
+
+ <div class="container">
+        <p>Este é um contêiner com espaçamento interno e externo.</p>
+    </div>
+    
 
 <section id="equipe">
   <h2>Nossa Equipe</h2>
@@ -446,7 +468,9 @@ function moveSlide(step) {
 
 
    
-
+ <div class="container">
+        <p>Este é um contêiner com espaçamento interno e externo.</p>
+    </div>
 
 
 
